@@ -22,7 +22,7 @@ export const Gallery = () => {
             setIsEmpty({ isEmpty: true });
             return;
           }
-          setPhotos([...photos, ...hits])
+          setPhotos((prev)=>([...prev, ...hits]))
           setShowBtn(page < Math.ceil(totalHits / 15))  
         })
         .catch(error => {
